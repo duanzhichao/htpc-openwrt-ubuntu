@@ -1,6 +1,6 @@
 ## 此教程为在一台四网口小主机上, 也可在普通家庭电脑上, 实现以下几个可选或必选功能
 - 实现windows作为电视机顶盒htpc, 下载器, 蓝光播放机, 网路播放器(网页会员看视频网站)(必选)
-- 内部实现一个openwrt作为主路由器(可选)
+- 内部实现一个openwrt作为主路由器,可以魔法上网(可选)
 - 内部再实现一个Ubuntu等linux的服务器, 用于跑一些比较常见的服务, 比如自动的京东签到和京东领券(可选)
 
 ## 条件
@@ -11,10 +11,10 @@
 ## 具体情况, 看完以后决定继不继续往下看
 1. 如果机器4个网口或更多, 这里全部功能都可实现
 2. 如果机器3个网口
-  - openwrt科学上网;htpc
+  - openwrt魔法上网;htpc
   - 服务器;htpc
   - openwrt旁路由(此教程openwrt安装不适用);服务器以及htpc
-  - openwrt科学上网;htpc(网口和服务器公用, 此教程服务器安装不适用);服务器.不建议, 网口桥接影响cpu性能, 导致openwrt跑不满速度
+  - openwrt魔法上网;htpc(网口和服务器公用, 此教程服务器安装不适用);服务器.不建议, 网口桥接影响cpu性能, 导致openwrt跑不满速度
 3. 如果机器2个网口
   - openwrt旁路由(此教程openwrt安装不适用);htpc
   - 服务器;htpc
@@ -89,11 +89,11 @@
 ![设置openwrt上网](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_16.png)
 
 
-13. 然后设置一下你的科学上网方式, 我这里用clash
+13. 然后设置一下你的魔法上网方式, 我这里用clash
 ![设置openclash](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_17.png)
 
 
-14. 愉快的打开youtube了 -> 将你的lan口接入你的无线路由器(建议无线路由器设置为ap模式)或者ap里 -> 你的电脑可以接入无线路由器后面, 如果网口不够用, 可以在无线路由器后接一个傻瓜交换机再接电脑 -> 这样你全家的电脑和手机ipad就可以正常畅游互联网了
+14. 愉快的打开上网了 -> 将你的lan口接入你的无线路由器(建议无线路由器设置为ap模式)或者ap里 -> 你的电脑可以接入无线路由器后面, 如果网口不够用, 可以在无线路由器后接一个傻瓜交换机再接电脑 -> 这样你全家的电脑和手机ipad就可以正常畅游互联网了
 ![上网](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_18.png)
 
 ## **3. ubuntu虚拟机安装可选**
