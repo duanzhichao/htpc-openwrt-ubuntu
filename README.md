@@ -36,7 +36,7 @@
 2. 因机器上的网口排序和名称与系统内部不同, 通过单根网线插入机器不同网口从而判断机器的网口顺序, 并修改连接名称或用笔记记下端口对应的网卡名称.其他接口数量和接口搭配雷同
 ![机器上网口的标定和名称](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/20220404101959.jpg)
 
-![机器上网口的标定和名称](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/完成网口顺序判断.PNG)
+![系统适配器名称修改](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/完成网口顺序判断.PNG)
 
 3. 分配好给各个系统的网口, 我这里分配如下
 |网口 |用途   
@@ -50,61 +50,61 @@
 ![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/拓扑图2.png)
 
 5. 在 开始 -> windows系统 -> 控制面板 -> 程序 -> 程序和功能 -> 启用或关闭windows功能 -> 勾选hyper-v复选框 -> 确定 -> 重启电脑
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/3.打开hyperv.PNG)
+![开启虚拟机](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/3.打开hyperv.PNG)
 
 ## **2. openwrt虚拟机的安装可选**
 1. 在 开始 -> windows管理工具 -> Hyper-V Manager -> 虚拟交换机管理器 -> 新建虚拟交换机 -> 外部 -> 创建虚拟交换机 -> 外部网络 -> 输入名称lan -> 选择你想作为openwrt的lan口的网卡, 我这里为eth1 -> 取消勾选[允许管理操作系统共享此网络适配器] -> 是
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/6.新建lan口.PNG)
+![虚拟机lan](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/6.新建lan口.PNG)
 
 2. 新建虚拟交换机 -> 外部 -> 创建虚拟交换机 -> 外部网络 -> 输入名称wan -> 选择你想作为openwrt的wan口的网卡, 我这里为eth0 -> 取消勾选[允许管理操作系统共享此网络适配器] -> 是
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/8.新建wan口.PNG)
+![虚拟机wan](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/8.新建wan口.PNG)
 
 3. 新建 -> 虚拟机 -> 下一步 -> 输入你想要的名称 -> 第一代 -> 内存1024m即可 -> 取消勾选[为此虚拟机分配动态内存]
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机4.PNG)
+![虚拟机内存设置](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机4.PNG)
 
 4. 下一步 -> 网络接口选择[lan]
 
 5. 使用现有的虚拟硬盘 -> 选择你的openwrt的vhdx镜像, 或者使用StarWind V2V Image Converter将你的img的openwrt系统转换为vhdx -> 完成
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机6.PNG)
+![添加虚拟硬盘](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机6.PNG)
 
 6. 右键 设置 添加硬件 网络适配器
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机7.PNG)
+![添加适配器](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机7.PNG)
 
 7. 虚拟交换机 选择 wan 应用
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机8.PNG)
+![添加适配器](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机8.PNG)
 
 8. 从bios启动 将ide上移到第一位 应用
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机9.PNG)
+![bios设置](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机9.PNG)
 
 9. 自动启动操作 始终自动启动此虚拟机 确定
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机11.PNG)
+![自动启动](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机11.PNG)
 
 10. 连接虚拟机 启动虚拟机
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机10.PNG)
+![启动虚拟机](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.新建虚拟机10.PNG)
 
 11. 将你的另一台电脑网线, 连接到虚拟机lan口, 在我这里是eth1,  在另外一台电脑 开始 -> windows系统 -> 控制面板 -> 网络和 Internet\网络和共享中心 -> 更改适配器设置 右键本地连接 -> 属性 -> internet协议版本4 -> 属性 ->将你的ip和网关设置为与openwrt同一网段, 我这里openwrt是5.1(灵活处理)
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_14.png)
+![设置ip地址](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_14.png)
 
 12. 浏览器打开192.168.5.1 -> 登录 -> 选择接口 -> wan口 -> 选择你的上网方式并设置好, (这里有可能打不开192.168.5.1, 将网线插入wan口试试, 我这里也就是eth0, 有可能内部将两个端口颠倒了, 你可以在接口那里重新绑定接口) -> 这样就可正常上网了
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_16.png)
+![设置openwrt上网](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_16.png)
 
 
-13. 然后设置一下你的科学上网方式, 我这里用opencalsh
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_17.png)
+13. 然后设置一下你的科学上网方式, 我这里用clash
+![设置openclash](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_17.png)
 
 
 14. 愉快的打开youtube了 -> 将你的lan口接入你的无线路由器(建议无线路由器设置为ap模式)或者ap里 -> 你的电脑可以接入无线路由器后面, 如果网口不够用, 可以在无线路由器后接一个傻瓜交换机再接电脑 -> 这样你全家的电脑和手机ipad就可以正常畅游互联网了
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_18.png)
+![上网](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_18.png)
 
 ## **3. ubuntu虚拟机安装可选**
 1. 开始 -> windows管理工具 -> Hyper-V Manager -> 虚拟交换机管理器 -> 新建虚拟交换机 -> 外部 -> 创建虚拟交换机 -> 外部网络 -> 输入名称虚拟机接口 -> 选择你想作为虚拟机的lan口的网卡, 我这里为eth2 -> 取消勾选[允许管理操作系统共享此网络适配器] -> 是
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.5.PNG)
+![ubuntu创建](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/12.5.PNG)
 
-2. 创建虚拟机, 选择一个ubuntu-server的镜像,  注意适配器选择上一步创建的虚拟机的那个, 至于安装过程我就省略了, 注意勾选openssl包安装, 省去装完系统之后再次安装的麻烦
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/13.新建虚拟机4.PNG)
+2. 创建虚拟机, 选择一个ubuntu-server的镜像, 注意适配器选择上一步创建的虚拟机的那个, 至于安装过程我就省略了, 注意勾选openssl包安装, 省去装完系统之后再次安装的麻烦
+![安装ubuntu](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/13.新建虚拟机4.PNG)
 
 3. 安装完成在虚拟机连接 -> 启动后 -> 登录完成 -> 可以看到ip地址 -> 可以直接用此界面输入命令 -> 也可以用ssh客户端, 我这里使用ssh登录到ubuntu
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_19.png)
+![连接ubuntu](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_19.png)
 
 4. 输入一下命令安装docker, 并将用户添加到docker用户组, 并重启服务器
 ```bash
@@ -137,22 +137,22 @@ docker run -dit \
 ```
 
 7. 用浏览器打开 ubuntu的ip:5700 地址, 设置初始化, 通知没有可以不设置
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_3.png)
+![青龙面板初始化](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_3.png)
 
 8. 青龙面板 -> 定时任务 -> 新建任务 -> 名称定时更新脚本 -> 复制以下命令 -> 定时规则 59 23 * * * 也就是每天更新一次 -> 确定并点击右侧运行
 ```
 ql repo https://github.com/KingRan/KR.git "jd_|jx_|jdCookie" "activity|backUp" "^jd[^_]|USER|utils|function|sign|sendNotify|ql|JDJR"
 ```
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_4.png)
+![青龙面板定时任务](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_4.png)
 
 9. 青龙面板 -> 等待一段时间, 刷新一下页面就会取得全部脚本
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_5.png)
+![青龙面板取脚本](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_5.png)
 
 10. 在浏览器输入m.jd.com -> 按下f12 -> 用用户名密码登录 -> 在管理员工具网路 -> 找到LoginRedirect路径单击 -> 找到右侧cookie -> 右键复制值
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_6.png)
+![获得jd的cookie](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_6.png)
 
 11. 青龙面板 -> 环境变量 -> 新建 -> 名称：JD_COOKIE -> 值：刚才复制 -> 输入确定
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_7.png)
+![新建环境变量](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_7.png)
 
 
 12. 青龙面板 -> 依赖管理 -> 新建-nodejs, 自动拆分, 是, 名称输入以下内容
@@ -179,7 +179,7 @@ global-agent
 js-base64
 axios
 ```
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_9.png)
+![安装依赖](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_9.png)
 
 13. 青龙面板 -> 依赖管理 -> 新建 -> Python3, 自动拆分, 是, 名称输入以下内容
 ```
@@ -188,7 +188,7 @@ canvas
 ping3
 jieba
 ```
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_10.png)
+![安装依赖](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_10.png)
 
 14. 青龙面板 -> 依赖管理 -> 新建 -> Linux, 自动拆分, 是, 名称输入以下内容
 ```
@@ -196,13 +196,13 @@ bizCode
 bizMsg
 lxml
 ```
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_11.png)
+![安装依赖](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_11.png)
 
 15. 完成依赖后, 在定时任务随便选择一个运行, 我选的的京豆签到
 
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_12.png)
+![运行测试](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_12.png)
 
-16. 基本上京豆, 加入京东极速版的红包, 每天2-5块钱不是问题, 还有一些常见的各种优惠券,  接下来就可以等每天他自动执行了
+16. 基本上京豆, 加入京东极速版的红包, 每天2-5块钱不是问题, 还有一些常见的各种优惠券, 接下来就可以等每天他自动执行了
 
 ## **4. htpc家庭媒体播放机**
 1. 将hdmi接口接到电视上, 从无线路由器或者交换机出来的网线接到eth3上
@@ -215,4 +215,4 @@ docker adolfintel/speedtest
 docker run --restart=always -d -p 8080:80 adolfintel/speedtest
 ```
 打开 ubuntu的ip:8080 测试本机到服务器速度, 可以找出局域网网线哪根是速度不达标的
-![拓扑图](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_13.png)
+![测速](https://raw.githubusercontent.com/duanzhichao/htpc-openwrt-ubuntu/main/img/img1_13.png)
